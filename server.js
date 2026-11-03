@@ -24,15 +24,15 @@ app.get("/", (req, res) => {
     res.send("Student Management API is running!");
 });
 
-// Database connection
 mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB Connected Successfully!");
 
-        // Start server after database connection
-        app.listen(process.env.PORT || 5000, () => {
-            console.log(`Server running on port ${process.env.PORT || 5000}`);
+        const PORT = process.env.PORT || 5000;
+
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`Server running on port ${PORT}`);
         });
     })
     .catch((error) => {
