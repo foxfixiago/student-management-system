@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const API_URL = "https://student-management-system-mjf5.onrender.com";
+const API_URL = "https://student-management-system-mjf5.onrender.com/api/students";
 
 function App() {
   const [activePage, setActivePage] = useState("Dashboard");
